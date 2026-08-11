@@ -1,12 +1,56 @@
+<!-- Esqueleto mínimo de uma cena A-Frame -->
 <!DOCTYPE html>
 <html>
-    <head>
-        <!-- head definitions go here -->
-    </head>
-    <body>
-        <!-- the content goes here -->
-    </body>
+  <head>
+    <script src="https://aframe.io/releases/1.8.0/aframe.min.js"></script>
+  </head>
+  <body>
 
-    <h1> Hello word </h1>
+    <a-scene cursor="rayOrigin: mouse" raycaster="objects: .clickable">
+
+    <a-sphere position="0 30 -50" radius="3.0" color="yellow" 
+    class="clickable" animation__click="property: scale; from: 1 1 1; to: 1.25 1.25 1.25; dir: alternate; loop: 2; dur: 140; startEvents: click">
+    <a-text value="SOL" align="center" width="3" color="#EAEAF2" position="0 0.75 0"></a-text>
     
+    </a-sphere>
+
+    <a-box position="-2.5 1.5 -1" color="#ff5d8f"
+    class="clickable" animation__click="property: scale; from: 1 1 1; to: 1.25 1.25 1.25; dir: alternate; loop: 2; dur: 140; startEvents: click">
+    <a-text value="Cubo" align="center" width="3" color="#EAEAF2" position="0 0.75 0"></a-text>
+    </a-box>
+    
+    <a-sphere      position="-1.5 1.5 -1" radius="0.45" color="#ffb454"
+    class="clickable" animation__click="property: scale; from: 1 1 1; to: 1.25 1.25 1.25; dir: alternate; loop: 2; dur: 140; startEvents: click">
+    <a-text value="Bola" align="center" width="3" color="#EAEAF2" position="0 0.75 0"></a-text>
+    </a-sphere>
+
+    <a-cylinder    position="-0.5 1.5 -1" radius="0.4" height="0.9" color="#4fd1c5"
+    class="clickable" animation__click="property: scale; from: 1 1 1; to: 1.25 1.25 1.25; dir: alternate; loop: 2; dur: 140; startEvents: click">
+    <a-text value="Cilindro" align="center" width="3" color="#EAEAF2" position="0 0.75 0"></a-text>
+    </a-cylinder>
+
+    <a-cone        position="0.5 1.5 -1" radius-bottom="0.5" radius-top="0" height="0.9" color="#63b3ed"
+    class="clickable" animation__click="property: scale; from: 1 1 1; to: 1.25 1.25 1.25; dir: alternate; loop: 2; dur: 140; startEvents: click">
+    <a-text value="Cone" align="center" width="3" color="#EAEAF2" position="0 0.75 0"></a-text>
+    </a-cone>
+
+    <a-torus       position="1.5 1.5 -1" radius="0.4" radius-tubular="0.12" color="#b794f4"
+    class="clickable" animation__click="property: scale; from: 1 1 1; to: 1.25 1.25 1.25; dir: alternate; loop: 2; dur: 140; startEvents: click">
+    <a-text value="Homer" align="center" width="3" color="#EAEAF2" position="0 0.75 0"></a-text>
+    </a-torus>
+
+    <a-dodecahedron position="2.5 1.5 -1" radius="0.48" color="#f687b3"
+    class="clickable" animation__click="property: scale; from: 1 1 1; to: 1.25 1.25 1.25; dir: alternate; loop: 2; dur: 140; startEvents: click">
+    <a-text value="Gabriel" align="center" width="3" color="#EAEAF2" position="0 0.75 0"></a-text>
+    </a-dodecahedron>
+
+    <a-sky color="blue"></a-sky>
+    <a-plane rotation="-90 0 0" width="60" height="60" color="white"></a-plane>
+    <a-light type="ambient" color="white" intensity="0.7"></a-light>
+    <a-light type="directional" color="white" intensity="1.85" position="0 1.5 -6"></a-light>
+
+    </a-scene>
+
+
+  </body>
 </html>
