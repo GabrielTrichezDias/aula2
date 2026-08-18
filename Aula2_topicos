@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.184.0/build/three.module.js",
+      "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.184.0/examples/jsm/"
+    }
+  }
+  </script>
+</head>
+<body>
+  <script type="module">
+    import * as THREE from 'three';
+
+    // Pilar 1: a cena
+    const scene = new THREE.Scene();
+    scene.background = new THREE.Color('#16121f');
+
+    // Pilar 2: a camera
+    const camera = new THREE.PerspectiveCamera(70, innerWidth / innerHeight, 0.1, 100);
+    camera.position.set(0, 1.6, 5);
+
+    // Pilar 3: o renderer
+    const renderer = new THREE.WebGLRenderer({ antialias: true });
+    renderer.setSize(innerWidth, innerHeight);
+    document.body.appendChild(renderer.domElement);
+
+    // um cubo: Geometria + Material = Malha
+    const cubo = new THREE.Mesh(
+      new THREE.BoxGeometry(1, 1, 1),
+      new THREE.MeshBasicMaterial({ color: '#6c4cff' })
+    );
+    cubo.position.set(0, 1.5, 0);
+    scene.add(cubo);
+
+    // Pilar 4: o loop de renderizacao
+    function animar() {
+      requestAnimationFrame(animar);
+      renderer.render(scene, camera);
+    }
+    animar();
+  </script>
+</body>
+</html>
